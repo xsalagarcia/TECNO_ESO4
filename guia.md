@@ -400,9 +400,9 @@ if any_planet in solar_system_planets:
 else:
     print(f"No tinc ni punyetera idea d'on està el planeta {any_planet}")
 
-print(f"Informació: El planeta més pròxim al sistema solar és {solar_system_planets[0]}")
-print(f"Informació: El planeta més llunyà al sistema solar és {solar_system_planets[-1]}")
-print(f"Informació: Els 3 primers planetes del sistema solar son {solar_system_planets[0:3]}")
+print(f"Informació: El planeta més pròxim al sol del sistema solar és {solar_system_planets[0]}")
+print(f"Informació: El planeta més llunyà al sol del sistema solar és {solar_system_planets[-1]}")
+print(f"Informació: Els 3 planetes més pròxims al sol del sistema solar son {solar_system_planets[0:3]}")
 
 ```
 
