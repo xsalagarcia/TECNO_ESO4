@@ -8,10 +8,10 @@
   * [`if`, `else`, `elif`](#if-else-elif)
 * [Bucles](#bucles)
   * [`while "condició"`](#while-condició)
-  * [Un parell de jocs senzills](#un-parell-de-jocs-senzills)
-    * [Un joc classic: Endevinar un número.](#un-joc-classic-endevinar-un-número)
-    * [Pedra, tisores, paper](#pedra-tisores-paper)
   * [`for "element" in "col·lecció d'elements":`](#for-element-in-collecció-delements)
+* [Un parell de jocs senzills](#un-parell-de-jocs-senzills)
+  * [Un joc classic: Endevinar un número.](#un-joc-classic-endevinar-un-número)
+  * [Pedra, tisores, paper](#pedra-tisores-paper)
 * [Col·leccions, seqüències i estructures de dades bàsiques a Python](#colleccions-seqüències-i-estructures-de-dades-bàsiques-a-python)
   * [Range()](#range)
   * [Tuples (`tuple`)](#tuples-tuple)
@@ -206,9 +206,24 @@ while answer != password:
 print("Molt bé, has endevinat la clau de pas")
 ```
 
-## Un parell de jocs senzills
+## `for "element" in "col·lecció d'elements":`
 
-### Un joc classic: Endevinar un número.
+Sense entrar en molts detalls, la instrucció `for` ens permet recórrer una col·lecció d'elements. El més
+important per utilitzar `for` és entendre què són les col·leccions, de manera que simplement crea un fitxer anomenat
+**`demo_for.py`**, posa el següent codi, i executa'l per veure'n el resultat (modifica el comentari pertinent).
+
+```python
+for i in range(11):
+    # TODO Escriu aquí, en forma de comentari, què fa aquest bucle.
+    print(i)
+```
+
+Llavors segueix amb el [següent apartat](#colleccions-seqüències-i-estructures-de-dades-bàsiques-a-python)
+
+
+# Un parell de jocs senzills
+
+## Un joc classic: Endevinar un número.
 
 > Per això farem servir una funció que no es troba integrada al llenguatge, però sí que està incorporada a una biblioteca
 > (mal traduïdes, llibreries (de library))
@@ -242,7 +257,7 @@ while answer != number:
 
 > També pots fer comentaris de diverses línies de codi amb """ comentari... """
 
-### Pedra, tisores, paper
+## Pedra, tisores, paper
 
 Anem a fer quelcom molt similar per poder jugar a *Pedra, tisores, paper*. Crea un nou fitxer, que el pots
 anomenar **`paper_stone_scissors.py`**, còpia el següent codi i acaba'l.
@@ -253,67 +268,107 @@ from random import randint  # Ara ja podem utilitzar la funció randint
 options = ["pedra", "tisores", "paper"]
 """options és una llista amb 3 paraules. La posició 0 és pedra, tisores és la posició 1 i paper és la posició 2"""
 
-repeat = "s"
 
-while repeat == "s":
+def evaluate_game(machine_option, player_option):
     """
-    Bucle, mentre repetir sigui s
+    Avalua l'opció de la màquina i l'opció del jugador.
+    :param machine_option: 
+    :param player_option: 
+    :return: 
     """
-
-    machine_option = options[randint(0, 2)]  # A partir d'un nombre aleatori, agafarem la paraula 0, 1 o 2 de la llista i la desarem a la variable machine_option
-
-    answer =  # <--utilitza input per demanar a l'usuari que escrigui pedra, tisores o paper i deses el valor a answer.
     
-    if answer == machine_option:
+    if player_option == machine_option:
         # Un empat
         print("Empat")
-        
-    elif answer == options[0]:  
+
+    elif player_option == options[0]:
         # L'usuari ha respost pedra
-        
+
         if machine_option == options[1]:
             # I la màquina tisores
             print(f"Has guanyat!, jo tenia {machine_option}")
-            
+
         else:
             # La màquina paper
-            print(f"He ganao, bacalao. Tenia {machine_option}")
-        
-    elif answer == options[1]:  
-        # L'usuari ha respost tisores
-        
+            print(f"He ganao, bacalao. Jo tenia {machine_option}")
 
-    """
-    Acaba tú el codi.
+    elif player_option == options[1]:
+        # TODO L'usuari ha respost tisores
 
-    utilitza input per demanar a l'usuari que escrigui pedra, tisores o paper.
+    
+    # TODO Acaba tú el codi. UTILITZA SEMPRE EL MATEIX MISSATGE, SEGONS SI GUANYA EL JUGADOR ("Has guanyat...") O LA MÀQUINA ("He ganao, bacalao...")
 
-    Utilitzant els condicionals que coneixes comparant el que ha escrit l'usuari amb el valor de 
-    machine_option, decideix qui guanya i informa a l'usuari amb print().
 
-    Opcional: Pots fer un codi més robust comprovant que l'usuari escriu exactament pedra, tisores o paper,
-    i en cas que no, tornar a demanar una opció dins les disponibles. La comprovació es pot fer fàcilment
-    amb `if answer in options...`
-
-    Demana a l'usuari si vol tornar a jugar amb input(). 
-    Per tornar a jugar, escriure la lletra s i apretar enter 
-    (fixa't en la condició per seguir dins el bucle que estem).
-    """
+def main():
+  repeat = "s"
+  
+  while repeat == "s":
+      """
+      Bucle, mentre la variable repeat sigui igual a "s".
+      """
+  
+      machine_option = options[randint(0,2)]  # A partir d'un nombre aleatori, agafarem la paraula 0, 1 o 2 de la llista i la desarem a la variable machine_option
+  
+      answer =  # TODO <--utilitza input per demanar a l'usuari que escrigui pedra, tisores o paper i deses el valor a answer.
+  
+      """
+      Opcional: Pots fer un codi més robust comprovant que l'usuari escriu exactament pedra, tisores o paper,
+      i en cas que no, tornar a demanar una opció dins les disponibles. La comprovació es pot fer fàcilment
+      amb `if answer in options...`
+      """
+      
+      # TODO crida la funció evaluate_game que també has d'implementar més a dalt. Passa l'opció de la màquina (machine_option) i la de l'usuari (answer).
+      
+      # TODO Demana a l'usuari si vol tornar a jugar amb input(). Per tornar a jugar, escriure la lletra s i apretar enter (amb la funció input) 
+      # (fixa't en la condició per seguir dins el bucle que estem). Per tant repeat = input(...
+      
+if __name__ == "__main__":
+    # Aquest condicional només s'executa si executem aquest fitxer, però no si executem el codi des d'un altre programa.
+    main()
 ```
 
-## `for "element" in "col·lecció d'elements":`
-
-Sense entrar en molts detalls, la instrucció `for` ens permet recórrer una col·lecció d'elements. El més
-important per utilitzar `for` és entendre què són les col·leccions, de manera que simplement crea un fitxer anomenat
-**`demo_for.py`**, posa el següent codi, i executa'l per veure'n el resultat (modifica el comentari pertinent).
+Quan creguis que has acabat l'exercici crea un nou fitxer anomenat `test_paper_stone_scissors.py`, enganxa
+el següent codi i executa'l (NO L'HAS DE MODIFICAR. NOMÉS _COPIAR I PEGAR_:
 
 ```python
-for i in range(11):
-    #  Escriu aquí, en forma de comentari, què fa aquest bucle.
-    print(i)
+import logging
+import unittest
+from unittest.mock import patch, MagicMock
+
+from .paper_stone_scissors import evaluate_game, options
+
+logging.basicConfig(level=logging.INFO)
+
+
+class TestPaperStoneScissors(unittest.TestCase):
+
+    @patch("builtins.print")
+    def test_evaluate_game(self, print_func: MagicMock):
+        # Testing tie
+        for option in options:
+            logging.info(f"Testing ties: Machine and player with {option}")
+            print_func.reset_mock()
+            evaluate_game(machine_option=option, player_option=option)
+            self.assertTrue("Empat" in print_func.call_args.args[0])
+
+        # Testing machine wins
+        for i in range(3):
+            print_func.reset_mock()
+            logging.info(f"Testing machine_option={options[i]}, player_option={options[(i + 1) % 3]}")
+            evaluate_game(machine_option=options[i], player_option=options[(i + 1) % 3])
+            self.assertTrue("He ganao" in print_func.call_args.args[0])
+            self.assertTrue(options[i] in print_func.call_args.args[0])
+
+        # Testing player wins
+        for i in range(3):
+            print_func.reset_mock()
+            logging.info(f"Testing machine_option={options[(i + 1) % 3]}, player_option={options[i]}")
+            evaluate_game(player_option=options[i], machine_option=options[(i + 1) % 3])
+            self.assertTrue("Has guanyat" in print_func.call_args.args[0])
+            self.assertTrue(options[(i + 1) % 3] in print_func.call_args.args[0])
+
 ```
 
-Llavors segueix amb el [següent apartat](#colleccions-seqüències-i-estructures-de-dades-bàsiques-a-python)
 
 
 # Col·leccions, seqüències i estructures de dades bàsiques a Python
@@ -355,8 +410,9 @@ number = int(input("De quin número vols la taula de multiplicar? "))
 
 print(f"La taula del {number}:")
 
-# Crea el bucle for amb una seqüència de nombres, del 0 al 10 (els dos inclosos).
-    # Per cada iteració imprimeix n x number = n * number
+# TODO Crea el bucle for amb una seqüència de nombres, del 0 al 10 (els dos inclosos).
+    # TODO Per cada iteració imprimeix n x number = n * number.
+    
 
 """
 Resultat esperat:
