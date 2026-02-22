@@ -586,21 +586,19 @@ def word_counter(text):
         Dins aquest bucle, cada iteració és una lletra del text.
         """
         
-        # Amb un if, comprova si el diccionari conté la clau corresponent a la lletra de la iteració (in, sense not).
+        # TODO Amb un if, comprova si el diccionari conté la clau corresponent a la lletra de la iteració (in, sense not).
             # Si hi és, s'executa això dins el bloc if
             result[letter] = result[letter] + 1
-        # Dins el bloc else (la lletra encara no cap clau al diccionari)
-            # Crea una nova entrada on la clau sigui la lletra corresponent i el seu valor sigui 1
+        # TODO Dins el bloc else (la lletra encara no cap clau al diccionari)
+            # TODO Crea una nova entrada on la clau sigui la lletra corresponent i el seu valor sigui 1
     
-    # Retorna el diccionari amb la instrucció result (per acabar la funció, fora del bucle for)
-    # return...
+    # TODO Retorna el diccionari amb la instrucció result (per acabar la funció, fora del bucle for)
+    # TODO return...
 
-# Crida la funció word_counter passant el text 
-# "Un perso en la prisión de Prúsia apresó a un preso con una persiana persa", 
-# desant el diccionari obtingut a una variable.
+# TODO Crida la funció word_counter passant el text "Un perso en la prisión de Prúsia apresó a un preso con una persiana persa", desant el diccionari obtingut a una variable.
 
-# itera tots els ítems amb un bucle for (for clau, valor in my_dictionary.items()) i 
-# a cada iteració fes un print que indiqui la lletra, i el nombre associat. Algo així com
+# TODO itera tots els ítems amb un bucle for (for clau, valor in my_dictionary.items()) i 
+# TODO a cada iteració fes un print que indiqui la lletra, i el nombre associat. Algo així com
 """
 Lletra U: 1 vegades
 Lletra n: 7 vegades
